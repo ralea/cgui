@@ -1,0 +1,20 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div id="campaign_ID" class="form-group">
+      <label for="campaignID">Campaign ID</label>
+      <input type="text" id="campaignID" class="form-control" name="campaignID" [ngModel]="campaign.campaignID">
+    </div>
+    <div id="campaign_code" class="form-group">
+      <label for="campaignCode">Campaign code</label>
+      <input type="text" id="campaignCode" class="form-control" name="campaignCode" [ngModel]="campaign.campaignCode">
+    </div>
+    <div id="n_campaign_code" class="form-group">
+      <label for="nCampaignCode">Campaign code</label>
+      <input type="text" id="nCampaignCode" class="form-control" name="nCampaignCode" [ngModel]="campaign.nCampaignCode">
+    </div>
+    <button type="Submit" class="btn btn-outline-dark">Submit</button>
+  </form>
+  <br>
+</div>
+<br>
+<app-campaigns></app-campaigns>

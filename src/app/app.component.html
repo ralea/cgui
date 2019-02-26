@@ -1,0 +1,36 @@
+<!--
+  The content below is only a placeholder and can be replaced.
+  <app-main-menu></app-main-menu>
+  <app-newcampaign></app-newcampaign>
+  <hr>
+  <app-campaigns></app-campaigns>
+-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">CAREGUI</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav">
+
+        <a class="nav-item nav-link active" routerLink='campaigns'>Campaigns</a>
+        <!-- <a class="nav-item nav-link" routerLink='offers'>Offers</a>  -->
+        <a class="nav-item nav-link disabled" routerLink=''>Settings</a>
+        <a *ngIf="!userIsAuthenticated" class="nav-item nav-link disabled" routerLink='login'>Login</a>
+        <a *ngIf="!userIsAuthenticated"class="nav-item nav-link disabled" routerLink='signup'>SignUp</a>
+        <button *ngIf="userIsAuthenticated"  (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

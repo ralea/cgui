@@ -1,0 +1,30 @@
+<!-- <app-newcampaign></app-newcampaign> -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">CampaignID</th>
+        <th scope="col">CampaignCode</th>
+        <th scope="col">nCampaignCode</th>
+        <th *ngIf="userIsAuthenticated" scope="col">Edit</th>
+        <th *ngIf="userIsAuthenticated" scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let camp of campaigns">
+        <td>{{ camp.campaignID }}</td>
+        <td>{{ camp.campaignCode }}</td>
+        <td>{{ camp.nCampaignCode }}</td>
+        <td *ngIf="userIsAuthenticated && userId === camp.creator"><a class="btn btn-outline-dark" [routerLink]="['/edit', camp._id]">Edit</a></td>
+        <td *ngIf="userIsAuthenticated && userId === camp.creator"><a class="btn btn-outline-dark" (click)="onDelete(camp._id)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <mat-paginator [length]="totalPosts" [pageSize]="itemsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangePage($event)" *ngIf="campaigns.length > 0"></mat-paginator>
+<!--   <button type="button" class="btn btn-outline-dark" (click)="onSaveCampaign()">
+    Save
+  </button>
+  <br />
+  <p *ngIf="campaignSent">Campaign sent</p> -->
+</div>

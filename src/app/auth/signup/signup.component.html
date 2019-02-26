@@ -1,0 +1,16 @@
+<div class="container">
+  <form (ngSubmit)='onSubmit(f)' #f='ngForm'>
+    <div id="email" class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" class="form-control" ngModel name="email" #email="ngModel" required email>
+      <small id="emailError" *ngIf="email.invalid" class="form-text text-muted">Please enter a valid email address.</small>
+    </div>
+    <div id="password" class="form-group">
+      <label for="campaignCode">Password</label>
+      <input type="password" id="password" class="form-control" ngModel name="password" #password="ngModel" required>
+      <small id="passError" *ngIf="password.invalid" class="form-text text-muted">Please enter a password.</small>
+    </div>
+    <button type="Submit" class="btn btn-outline-dark">Submit</button>
+  </form>
+  <br>
+</div>
